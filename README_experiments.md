@@ -261,3 +261,68 @@ bash run_benchmarks.sh
 ```
 
 Only the missing runs will be executed.
+
+---
+
+## SDL Electrolyte Experiments
+
+The `sdl_experiments_electrolyte/` directory contains results from **real Self-Driving Laboratory (SDL) experiments** on electrolyte composition optimization. Unlike the in-silico experiments above, these results were collected from physical measurements and are provided as pre-recorded data.
+
+### Overview
+
+| Item | Detail |
+|---|---|
+| Task | Electrolyte property optimization |
+| Search space | 32-dimensional binary/integer feature space (electrolyte composition) |
+| Methods compared | NTS (conservative) vs BBO_TS (PHYSBO) |
+| Iterations | 11 batches per method |
+| Samples per batch | 48 measurements |
+| Target threshold | 0.14 (used to define "near-optimal" samples) |
+
+### Directory Structure
+
+```
+sdl_experiments_electrolyte/
+├── NTS_data/                   # Real SDL measurement results using NTS
+│   ├── 20250305134553_res.csv  # Batch 1 results (timestamp-named)
+│   ├── 20250318102954_res.csv  # Batch 2 results
+│   └── ... (11 files total)
+├── PHYSBO_data/                # Real SDL measurement results using BBO_TS (PHYSBO)
+│   ├── 20250305134553_res.csv  # Batch 1 results
+│   └── ... (11 files total)
+└── plot.ipynb                  # Analysis and figure generation notebook
+```
+
+### Data Format
+
+Each CSV file in `NTS_data/` and `PHYSBO_data/` represents one batch of SDL measurements, with no header row:
+
+| Column | Description |
+|---|---|
+| Column 1 | `action_id` — candidate index in the search space |
+| Columns 2–33 | Feature vector (32 binary/integer electrolyte composition variables; values are 0.0 or 5.0) |
+| Last column | Target value (measured property, e.g., ionic conductivity) |
+
+Files are named by timestamp in the format `YYYYMMDDHHMMSS_res.csv` and processed in chronological order.
+
+### Generating Figures
+
+The `plot.ipynb` notebook reads the pre-recorded data from both directories and generates the comparison figures already present in the directory. To regenerate them:
+
+**Figures generated:**
+
+| File | Description |
+|---|---|
+| `nts_physbo_comparison_max.pdf` | Best observed target value by iteration |
+| `nts_physbo_comparison_max_with_scatter.pdf` | Same with individual measurement scatter |
+| `circles_by_iteration.pdf` | Number of diverse near-optimal samples (circles metric) by iteration |
+| `circles_0.14.pdf` | Circles metric vs Hamming distance threshold (target threshold = 0.14) |
+| `circles_auc.pdf` | Circles-AUC bar chart comparing NTS vs BBO_TS |
+| `circles_log.pdf` | Circles metric on log scale |
+| `tsne_plot_0.14.pdf` | t-SNE visualization of samples above target threshold 0.14 |
+
+### Notes
+
+- No additional setup or notebook execution is required to reproduce the figures — all raw measurement data is already included in `NTS_data/` and `PHYSBO_data/`
+- The diversity metric ("circles") uses a Maximal Independent Set algorithm on the Hamming distance graph of binary feature vectors
+- BBO_TS corresponds to PHYSBO (Bayesian Optimization with Thompson Sampling) without the nested diversity mechanism
