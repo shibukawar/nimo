@@ -3,6 +3,7 @@ import os
 
 import numpy as np
 import random
+import secrets
 import copy
 import csv
 
@@ -133,7 +134,9 @@ class PHYSBO():
 
             policy = physbo.search.discrete.Policy( test_X = X, initial_data = [calculated_ids, t_initial] )
 
-            policy.set_seed( 0 )
+            seed = secrets.randbelow(2**31)
+            print(seed)
+            policy.set_seed( seed )
 
             actions = policy.bayes_search( max_num_probes = 1, num_search_each_probe = self.num_proposals, 
             simulator = None, score = self.score, interval = 0, num_rand_basis = self.num_rand_basis )
@@ -242,7 +245,7 @@ class PHYSBO():
             policy = physbo.search.discrete_multi.Policy( test_X = X, num_objectives = self.num_objectives,
             initial_data = [calculated_ids, t_initial])
 
-            policy.set_seed( 0 )
+            policy.set_seed( random.randint(0, 2**31 - 1) )
 
             actions = policy.bayes_search( max_num_probes = 1, num_search_each_probe = self.num_proposals, 
             simulator = None, score = self.score, interval = 0)

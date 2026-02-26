@@ -1,0 +1,77 @@
+==========================================
+Starting Grain Boundary Benchmark Experiments
+Batch sizes: 1 12 24 36 48
+Trials per batch size: 5
+Max parallel jobs: 5
+==========================================
+Total experiments to run: 125
+
+
+----------------------------------------
+Running: method=nts, batch_size=1, trial=1, nts_mode=conservative
+----------------------------------------
+Submitted: 1 / 125 (running: 1)
+
+----------------------------------------
+Running: method=nts, batch_size=1, trial=1, nts_mode=moderate
+----------------------------------------
+Submitted: 2 / 125 (running: 2)
+
+----------------------------------------
+Running: method=nts, batch_size=1, trial=1, nts_mode=aggressive
+----------------------------------------
+Submitted: 3 / 125 (running: 3)
+
+----------------------------------------
+Running: method=physbo, batch_size=1, trial=1
+----------------------------------------
+Submitted: 4 / 125 (running: 4)
+Config file: ./configs/nts_conservative_batch1_trial1.yaml
+Search space: ./descriptor_search_space_conservative_batch1_trial1.csv
+Output notebook: ./data_conservative_batch1_trial1/executed_notebook.ipynb
+
+----------------------------------------
+Running: method=random, batch_size=1, trial=1
+----------------------------------------
+Submitted: 5 / 125 (running: 5)
+Config file: ./configs/nts_moderate_batch1_trial1.yaml
+Search space: ./descriptor_search_space_moderate_batch1_trial1.csv
+Output notebook: ./data_moderate_batch1_trial1/executed_notebook.ipynb
+Config file: ./configs/nts_aggressive_batch1_trial1.yaml
+Search space: ./descriptor_search_space_aggressive_batch1_trial1.csv
+Output notebook: ./data_aggressive_batch1_trial1/executed_notebook.ipynb
+Config file: ./configs/physbo_batch1_trial1.yaml
+Search space: ./descriptor_search_space_physbo_batch1_trial1.csv
+Output notebook: ./data_physbo_batch1_trial1/executed_notebook.ipynb
+Config file: ./configs/random_batch1_trial1.yaml
+Search space: ./descriptor_search_space_random_batch1_trial1.csv
+Output notebook: ./data_random_batch1_trial1/executed_notebook.ipynb
+Input Notebook:  descriptor_nimo_main_functions_nts.ipynb
+Output Notebook: ./data_conservative_batch1_trial1/executed_notebook.ipynb
+Input Notebook:  descriptor_nimo_main_functions_nts.ipynb
+Output Notebook: ./data_aggressive_batch1_trial1/executed_notebook.ipynb
+Input Notebook:  descriptor_nimo_main_functions_nts.ipynb
+Output Notebook: ./data_moderate_batch1_trial1/executed_notebook.ipynb
+Input Notebook:  descriptor_nimo_main_functions_physbo_parameterized.ipynb
+Output Notebook: ./data_physbo_batch1_trial1/executed_notebook.ipynb
+Input Notebook:  descriptor_nimo_main_functions_random.ipynb
+Output Notebook: ./data_random_batch1_trial1/executed_notebook.ipynb
+Executing:   0%|          | 0/22 [00:00<?, ?cell/s]Executing:   0%|          | 0/22 [00:00<?, ?cell/s]Executing:   0%|          | 0/22 [00:00<?, ?cell/s]Executing:   0%|          | 0/22 [00:00<?, ?cell/s]Executing:   0%|          | 0/22 [00:00<?, ?cell/s]Executing notebook with kernel: nimo-venv
+Executing notebook with kernel: nimo-venv
+Executing notebook with kernel: nimo-venv
+Executing notebook with kernel: nimo-venv
+Executing notebook with kernel: nimo-venv
+Executing:   5%|▍         | 1/22 [00:04<01:28,  4.22s/cell]Executing:   5%|▍         | 1/22 [00:04<01:28,  4.22s/cell]Executing:   5%|▍         | 1/22 [00:04<01:28,  4.22s/cell]Executing:   5%|▍         | 1/22 [00:04<01:28,  4.23s/cell]Executing:   5%|▍         | 1/22 [00:04<01:28,  4.24s/cell]Executing:  36%|███▋      | 8/22 [00:04<00:05,  2.52cell/s]Executing:  36%|███▋      | 8/22 [00:04<00:05,  2.52cell/s]Executing:  36%|███▋      | 8/22 [00:04<00:05,  2.51cell/s]Executing:  36%|███▋      | 8/22 [00:04<00:05,  2.51cell/s]Executing:  36%|███▋      | 8/22 [00:04<00:05,  2.51cell/s]Executing:  64%|██████▎   | 14/22 [00:04<00:01,  4.88cell/s]Executing:  64%|██████▎   | 14/22 [00:04<00:01,  4.88cell/s]Executing:  64%|██████▎   | 14/22 [00:04<00:01,  4.88cell/s]Executing:  64%|██████▎   | 14/22 [00:04<00:01,  4.88cell/s]Executing:  64%|██████▎   | 14/22 [00:04<00:01,  4.87cell/s]Executing:  68%|██████▊   | 15/22 [00:20<00:01,  4.88cell/s]Executing:  68%|██████▊   | 15/22 [00:20<00:01,  4.88cell/s]Executing:  68%|██████▊   | 15/22 [00:20<00:01,  4.88cell/s]Executing:  68%|██████▊   | 15/22 [00:20<00:01,  4.88cell/s]Executing:  68%|██████▊   | 15/22 [00:20<00:01,  4.87cell/s]Executing:  73%|███████▎  | 16/22 [05:32<03:18, 33.03s/cell]Executing:  77%|███████▋  | 17/22 [05:32<02:24, 28.90s/cell]Executing:  91%|█████████ | 20/22 [05:32<00:37, 18.86s/cell]Executing: 100%|██████████| 22/22 [05:34<00:00, 14.42s/cell]Executing: 100%|██████████| 22/22 [05:35<00:00, 15.25s/cell]
+Completed: random (batch_size=1, trial=1)
+
+----------------------------------------
+Running: method=nts, batch_size=1, trial=2, nts_mode=conservative
+----------------------------------------
+Submitted: 6 / 125 (running: 5)
+Config file: ./configs/nts_conservative_batch1_trial2.yaml
+Search space: ./descriptor_search_space_conservative_batch1_trial2.csv
+Output notebook: ./data_conservative_batch1_trial2/executed_notebook.ipynb
+Input Notebook:  descriptor_nimo_main_functions_nts.ipynb
+Output Notebook: ./data_conservative_batch1_trial2/executed_notebook.ipynb
+Executing:   0%|          | 0/22 [00:00<?, ?cell/s]Executing notebook with kernel: nimo-venv
+Executing:   5%|▍         | 1/22 [00:04<01:35,  4.56s/cell]Executing:  36%|███▋      | 8/22 [00:04<00:05,  2.34cell/s]Executing:  64%|██████▎   | 14/22 [00:04<00:01,  4.55cell/s]Executing:  68%|██████▊   | 15/22 [00:20<00:01,  4.55cell/s]

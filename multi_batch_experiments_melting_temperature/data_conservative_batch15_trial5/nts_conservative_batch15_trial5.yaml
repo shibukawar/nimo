@@ -1,0 +1,25 @@
+# NTS Experiment Configuration
+
+# Number of AI-robot cycles
+# cycles_num: 15
+total_eval: 45
+
+initial_batch_size: 15
+
+# Number of objectives
+objectives_num: 1
+
+# Trial number
+trial: 5
+
+# Batch size for proposals
+batch_size: 15
+
+# NTS mode: "conservative", "moderate", or "aggressive"
+nts_mode: conservative
+
+# Random seed for initial random selection
+re_seed: 111
+
+# Whether to use DPP
+use_dpp: false

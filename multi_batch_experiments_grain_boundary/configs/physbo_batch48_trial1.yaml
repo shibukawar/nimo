@@ -1,0 +1,23 @@
+# PHYSBO Experiment Configuration for Grain Boundary
+
+# Number of AI-robot cycles
+# cycles_num: 30
+total_eval: 720
+
+# Number of objectives
+objectives_num: 1
+
+# Trial number
+trial: 1
+
+# Batch size for proposals
+batch_size: 48
+
+# Random seed for initial random selection
+re_seed: 111
+
+# PHYSBO score function
+physbo_score: "TS"
+
+# Whether to minimize
+minimization: false

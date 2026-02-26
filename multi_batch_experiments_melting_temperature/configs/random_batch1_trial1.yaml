@@ -1,0 +1,17 @@
+# Random Experiment Configuration
+
+# Number of AI-robot cycles
+# cycles_num: 15
+total_eval: 45
+
+# Number of objectives
+objectives_num: 1
+
+# Trial number
+trial: 1
+
+# Batch size for proposals
+batch_size: 1
+
+# Random seed for initial random selection
+re_seed: 111

@@ -1,0 +1,2 @@
+input file for machine
+0.0,24.0

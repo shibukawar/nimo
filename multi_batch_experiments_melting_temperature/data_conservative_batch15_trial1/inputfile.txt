@@ -1,0 +1,2 @@
+input file for machine
+90.0,6.0

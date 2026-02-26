@@ -19,6 +19,7 @@ class selection():
                  pdc_estimation = None, pdc_sampling = None,
                  process_X = None,
                  combi_ranges = None, spread_elements = None,
+                 sample_mode = None, use_dpp = None,
                  output_res = None, training_res = None):
 
         """Constructor
@@ -26,7 +27,7 @@ class selection():
         This function do not depend on robot.
 
         Args:
-            method (str): "RE" or "BO"or "BLOX" or "PDC"
+            method (str): "RE" or "BO"or "BLOX" or "PDC" or "NTS"
             input_file (str): the file for candidates for AI algorithm
             output_file (str): the file for proposals from AI algorithm
             num_objectives (int): the number of objectives
@@ -42,6 +43,8 @@ class selection():
             process_X (list) : index for process parameters in BOMP method
             combi_ranges (list[float]): the ranges for each element in COMBI method
             spread_elements (list[int]): the list of spread elements in COMBI method
+            sample_mode (Mode): the sampling mode for NTS method (conservative, moderate, aggressive)
+            use_dpp (bool): whether to use DPP for diversity in NTS method
             output_res (str): True or False to output res file
             training_res (str): True or False to training res file
 
@@ -66,6 +69,9 @@ class selection():
 
         self.combi_ranges = combi_ranges
         self.spread_elements = spread_elements
+
+        self.sample_mode = sample_mode
+        self.use_dpp = use_dpp
 
         self.output_res = output_res
         self.training_res = training_res
@@ -130,6 +136,11 @@ class selection():
             res = nimo.ai_tools.ai_tool_combi.COMBI(self.input_file, self.output_file, 
             self.num_objectives, self.num_proposals, self.physbo_score, self.minimization, self.combi_ranges, 
             self.spread_elements).select()
+            return res
+
+        if self.method == "NTS":
+            res = nimo.ai_tools.ai_tool_nts.NTS(self.input_file, self.output_file, 
+            self.num_proposals, self.sample_mode, self.use_dpp, self.re_seed, self.output_res).select()
             return res
 
 

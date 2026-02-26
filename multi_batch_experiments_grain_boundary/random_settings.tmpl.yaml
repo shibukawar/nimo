@@ -1,0 +1,17 @@
+# Random Experiment Configuration for Grain Boundary
+
+# Number of AI-robot cycles
+# cycles_num: 30
+total_eval: 720
+
+# Number of objectives
+objectives_num: 1
+
+# Trial number
+trial: ${TRIAL}
+
+# Batch size for proposals
+batch_size: ${BATCH_SIZE}
+
+# Random seed for initial random selection
+re_seed: 111

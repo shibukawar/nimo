@@ -1,0 +1,2 @@
+input file for machine
+4.8,1.4,0.6
